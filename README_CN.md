@@ -27,9 +27,55 @@
 
 ---
 
-## 📋 首次使用设置
+## ⚡ 一分钟快速安装
 
-### 第一步：检查基础工具
+> 🎯 **小白专用**：只需要复制粘贴下面的命令到终端就行！
+
+### 第一步：下载这个 Skill
+
+打开终端（按 `Cmd + 空格`，输入「终端」或「Terminal」，回车），然后粘贴：
+
+```bash
+mkdir -p ~/.claude/skills && cd ~/.claude/skills && git clone https://github.com/yizhiyanhua-ai/media-downloader.git
+```
+
+### 第二步：安装必要工具
+
+```bash
+pip install requests yt-dlp && brew install ffmpeg
+```
+
+> 💡 没有 `brew`？先安装它：打开 https://brew.sh，复制首页那行命令运行即可
+
+### 第三步：获取免费 API Key（30 秒）
+
+1. 打开 https://www.pexels.com，点击右上角 **Join** 注册
+2. 注册后访问 https://www.pexels.com/api/
+3. 点击 **Your API Key**，复制显示的密钥
+
+### 第四步：保存你的 API Key
+
+```bash
+echo 'export PEXELS_API_KEY="在这里粘贴你的密钥"' >> ~/.zshrc && source ~/.zshrc
+```
+
+> ⚠️ 记得把「在这里粘贴你的密钥」替换成你刚才复制的真实密钥！
+
+### 第五步：验证安装
+
+```bash
+python ~/.claude/skills/media-downloader/media_cli.py status
+```
+
+看到绿色 ✅ 就说明安装成功了！🎉
+
+---
+
+## 📋 详细设置指南
+
+> 已经完成快速安装？直接跳到 [使用示例](#-使用示例)！
+
+### 检查基础工具
 
 在终端运行以下命令检查状态：
 

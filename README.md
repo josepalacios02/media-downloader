@@ -27,9 +27,55 @@
 
 ---
 
-## 📋 First-Time Setup
+## ⚡ Quick Install (1 Minute)
 
-### Step 1: Check Basic Tools
+> 🎯 **For beginners**: Just copy and paste the commands below into your Terminal!
+
+### Step 1: Download the Skill
+
+Open Terminal (press `Cmd + Space`, type "Terminal", press Enter), then paste:
+
+```bash
+mkdir -p ~/.claude/skills && cd ~/.claude/skills && git clone https://github.com/yizhiyanhua-ai/media-downloader.git
+```
+
+### Step 2: Install Required Tools
+
+```bash
+pip install requests yt-dlp && brew install ffmpeg
+```
+
+> 💡 Don't have `brew`? Install it first: https://brew.sh (just copy the command from their homepage)
+
+### Step 3: Get Your Free API Key (30 seconds)
+
+1. Open https://www.pexels.com and click **Join** (top right)
+2. After signup, go to https://www.pexels.com/api/
+3. Click **Your API Key** and copy it
+
+### Step 4: Save Your API Key
+
+```bash
+echo 'export PEXELS_API_KEY="paste_your_key_here"' >> ~/.zshrc && source ~/.zshrc
+```
+
+> ⚠️ Replace `paste_your_key_here` with your actual API key!
+
+### Step 5: Verify Installation
+
+```bash
+python ~/.claude/skills/media-downloader/media_cli.py status
+```
+
+If you see green ✅ marks, you're all set! 🎉
+
+---
+
+## 📋 Detailed Setup Guide
+
+> Already completed Quick Install? Skip to [Usage Examples](#-usage-examples)!
+
+### Check Basic Tools
 
 Run this command to check status:
 
