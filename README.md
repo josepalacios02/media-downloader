@@ -135,10 +135,32 @@ If you see green ✅ marks, configuration is successful!
 
 ## 📁 Download Location
 
-All files are saved to:
+By default, all files are saved to:
 
 ```
 ~/.claude/skills/media-downloader/downloads/
+```
+
+### Custom Download Directory
+
+You can specify a custom download location using the `-o` or `--output` option:
+
+```bash
+# Download images to a specific folder
+media_cli.py image "cats" -o ~/Pictures/cats
+
+# Download videos to Desktop
+media_cli.py video "sunset" -o ~/Desktop
+
+# Download YouTube video to current directory
+media_cli.py youtube "URL" -o .
+```
+
+Or simply tell me where you want the files:
+
+```
+"Download 5 cat images to my Desktop"
+"Save the video to ~/Videos/project"
 ```
 
 ---

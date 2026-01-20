@@ -141,6 +141,28 @@ python ~/.claude/skills/media-downloader/media_cli.py status
 ~/.claude/skills/media-downloader/downloads/
 ```
 
+### 自定义下载目录
+
+你可以使用 `-o` 或 `--output` 参数指定下载位置：
+
+```bash
+# 下载图片到指定文件夹
+media_cli.py image "猫咪" -o ~/Pictures/cats
+
+# 下载视频到桌面
+media_cli.py video "日落" -o ~/Desktop
+
+# 下载 YouTube 视频到当前目录
+media_cli.py youtube "URL" -o .
+```
+
+或者直接告诉我你想保存到哪里：
+
+```
+"下载 5 张猫咪图片到桌面"
+"把视频保存到 ~/Videos/project 文件夹"
+```
+
 ---
 
 ## ❓ 常见问题
