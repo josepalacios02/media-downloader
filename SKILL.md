@@ -36,78 +36,36 @@ Just tell me what you want, and I'll find and download relevant images and video
 
 ---
 
-## 📋 首次使用设置 / First-Time Setup
+## 📋 Skill 执行逻辑 / Skill Execution Logic
 
-### 第一步：检查基础工具 / Step 1: Check Basic Tools
+### 🔑 API Key 按需配置 / On-Demand API Key Configuration
 
-在终端运行以下命令检查状态：
+**重要**：不要在用户安装时就要求配置 API Key！按以下逻辑处理：
 
-```bash
-python ~/.claude/skills/media-downloader/media_cli.py status
-```
+1. **用户下载 YouTube 视频时**：直接执行，不需要任何 API Key
+2. **用户首次下载图片时**：
+   - 检查 `PEXELS_API_KEY` 环境变量是否存在
+   - 如果不存在，引导用户配置：
+     ```
+     检测到你还没有配置图库 API Key。下载图片需要一个免费的 API Key。
 
-如果显示 yt-dlp 或 ffmpeg 未安装，请运行：
+     请按以下步骤操作：
+     1. 打开 https://www.pexels.com，点击 Join 注册（支持 Google/Apple 一键注册）
+     2. 注册后访问 https://www.pexels.com/api/，点击 Your API Key
+     3. 复制显示的密钥，粘贴给我
+     ```
+   - 用户提供 API Key 后，帮用户保存到系统环境变量：
+     ```bash
+     echo 'export PEXELS_API_KEY="用户的密钥"' >> ~/.zshrc && source ~/.zshrc
+     ```
+   - 然后继续完成图片下载任务
 
-```bash
-# 安装 Python 依赖
-pip install requests yt-dlp
+### 🎬 YouTube 下载优先 / YouTube First
 
-# 安装视频处理工具 (macOS)
-brew install ffmpeg
-```
-
-### 第二步：获取免费 API 密钥 / Step 2: Get Free API Keys
-
-> 💡 **为什么需要 API 密钥？**
->
-> 图片和视频素材来自 Pexels、Pixabay 等专业图库网站。这些网站提供免费的高质量素材，但需要注册账号获取一个"通行证"（API Key）才能使用他们的搜索服务。
->
-> **好消息是**：注册完全免费，而且这些素材可以免费商用！
-
-#### 🟠 获取 Pexels API Key（推荐，最简单）
-
-1. 打开 https://www.pexels.com
-2. 点击右上角 **Join** 注册账号（可用 Google/Apple 账号快速注册）
-3. 注册后，访问 https://www.pexels.com/api/
-4. 点击 **Your API Key** 按钮
-5. 填写简单信息后，复制显示的 API Key
-
-#### 🟢 获取 Pixabay API Key
-
-1. 打开 https://pixabay.com
-2. 点击右上角 **Join** 注册账号
-3. 注册后，访问 https://pixabay.com/api/docs/
-4. 页面中会显示你的 API Key（绿色框内）
-
-#### 🔵 获取 Unsplash API Key（可选）
-
-1. 打开 https://unsplash.com/developers
-2. 点击 **Register as a developer**
-3. 创建一个 Application
-4. 在应用详情页找到 **Access Key**
-
-### 第三步：保存 API 密钥 / Step 3: Save Your Keys
-
-将获取到的密钥添加到你的终端配置文件中。
-
-**macOS / Linux 用户**，编辑 `~/.zshrc` 或 `~/.bashrc`：
-
-```bash
-# Media Downloader API Keys
-export PEXELS_API_KEY="你的Pexels密钥"
-export PIXABAY_API_KEY="你的Pixabay密钥"
-export UNSPLASH_ACCESS_KEY="你的Unsplash密钥"  # 可选
-```
-
-保存后运行 `source ~/.zshrc` 使配置生效。
-
-### 第四步：验证设置 / Step 4: Verify Setup
-
-```bash
-python ~/.claude/skills/media-downloader/media_cli.py status
-```
-
-看到绿色 ✅ 就说明配置成功了！
+当用户说「下载视频」但没有指定来源时，优先推荐 YouTube：
+- YouTube 不需要 API Key
+- 内容更丰富
+- 支持时间段裁剪
 
 ---
 

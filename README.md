@@ -43,51 +43,33 @@ Just click "Allow" when Claude asks for permission!
 
 ---
 
-## 🔑 Configure API Key (Required for Image Downloads)
+## 🔑 About API Keys
 
-> 💡 **Note**: If you only need to download YouTube videos, you can skip this step!
+> 💡 **On-Demand Configuration**: No API Key needed during installation!
+>
+> - **YouTube Videos**: No API Key required, works right after installation
+> - **Image Downloads**: Claude will guide you to configure Pexels API Key on first use
 
-Image downloads require a free API Key (like a "membership card" for stock photo sites):
+### What Happens When You First Download Images?
 
-1. Go to **https://www.pexels.com**, click **Join** to register (Google/Apple quick signup supported)
-2. After signup, visit **https://www.pexels.com/api/**, click **Your API Key**
-3. Copy the key, then tell Claude: **"Help me save my Pexels API Key to environment variables"**
+When you first say "Download some cat pictures", Claude will:
 
-When done, tell Claude **"Check the status of media-downloader"** to confirm everything is working.
+1. Detect that you haven't configured a stock photo API Key yet
+2. Guide you to register at **https://www.pexels.com** (Google/Apple quick signup supported)
+3. Help you get the API Key and automatically save it to system environment variables
+4. Then continue with the image download
+
+The whole process takes just a few minutes, and you only need to do it once!
 
 ---
 
-## 📋 More API Keys (Optional)
+## 📋 More Image Sources (Optional)
 
-> 💡 **Why do I need API Keys?**
->
-> Think of an API Key as a "membership card" for stock photo websites. With it, you can search and download HD images and videos.
->
-> **Good news**: Registration is completely free, and all assets are free for commercial use!
+Pexels covers most needs. If you want more image sources, just tell Claude:
 
-The quick install above only configured Pexels. If you want more image sources, you can register for these:
+> **"Help me configure Pixabay API Key"** or **"Help me configure Unsplash API Key"**
 
-### 🟢 Pixabay (More Assets)
-
-1. Go to **https://pixabay.com**
-2. Click **Join** in the top right corner
-3. After signup, visit **https://pixabay.com/api/docs/**
-4. Your API Key will be displayed right on the page (in the green box)
-5. Tell Claude: **"Help me save my Pixabay API Key to environment variables"**, then paste your key
-
-### 🔵 Unsplash (More Artistic Images)
-
-1. Go to **https://unsplash.com/developers**
-2. Click **Register as a developer**
-3. Create an Application (just give it any name)
-4. Find and copy the **Access Key**
-5. Tell Claude: **"Help me save my Unsplash API Key to environment variables"**
-
-### 🔧 Having Issues?
-
-Tell Claude: **"Check the status of media-downloader"**
-
-Claude will tell you which tools are installed and which API Keys are configured. Just fix what's missing!
+Claude will guide you through registration and configuration.
 
 ---
 

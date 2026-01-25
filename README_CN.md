@@ -43,51 +43,33 @@ Claude 会自动完成：
 
 ---
 
-## 🔑 配置 API Key（下载图片需要）
+## 🔑 关于 API Key
 
-> 💡 **注意**：如果你只需要下载 YouTube 视频，可以跳过这一步！
+> 💡 **按需配置**：安装时不需要配置任何 API Key！
+>
+> - **下载 YouTube 视频**：不需要 API Key，安装完成即可使用
+> - **下载图片**：首次下载时，Claude 会自动引导你配置 Pexels API Key
 
-图片下载需要一个免费的 API Key（就像图库网站的「会员卡」）：
+### 首次下载图片时会发生什么？
 
-1. 打开 **https://www.pexels.com**，点击 **Join** 注册（支持 Google/Apple 一键注册）
-2. 注册后访问 **https://www.pexels.com/api/**，点击 **Your API Key**
-3. 复制显示的密钥，然后对 Claude 说：**"帮我把 Pexels API Key 保存到环境变量"**
+当你第一次说「帮我下载一些猫咪图片」时，Claude 会：
 
-完成后对 Claude 说 **"检查一下 media-downloader 的状态"** 确认一切正常。
+1. 检测到你还没有配置图库 API Key
+2. 引导你去 **https://www.pexels.com** 注册（支持 Google/Apple 一键注册）
+3. 帮你获取 API Key 并自动保存到系统环境变量
+4. 然后继续完成图片下载
+
+整个过程只需要几分钟，而且只需要配置一次！
 
 ---
 
-## 📋 更多图库 API Key（可选）
+## 📋 更多图库（可选）
 
-> 💡 **为什么需要 API Key？**
->
-> 简单来说，API Key 就像是图库网站给你的「会员卡」。有了它，你就能搜索和下载高清图片和视频。
->
-> **好消息**：注册完全免费，下载的素材也可以免费商用！
+Pexels 已经能满足大部分需求。如果你想要更多图片来源，可以对 Claude 说：
 
-上面的快速安装只配置了 Pexels。如果你想要更多图片来源，可以再注册这些：
+> **"帮我配置 Pixabay API Key"** 或 **"帮我配置 Unsplash API Key"**
 
-### 🟢 Pixabay（更多素材选择）
-
-1. 打开 **https://pixabay.com**
-2. 点击右上角 **Join** 注册
-3. 注册后访问 **https://pixabay.com/api/docs/**
-4. 页面上会直接显示你的 API Key（绿色框里）
-5. 对 Claude 说：**"帮我把 Pixabay API Key 保存到环境变量"**，然后粘贴你的 Key
-
-### 🔵 Unsplash（艺术感更强的图片）
-
-1. 打开 **https://unsplash.com/developers**
-2. 点击 **Register as a developer**
-3. 创建一个 Application（随便填个名字就行）
-4. 找到 **Access Key** 并复制
-5. 对 Claude 说：**"帮我把 Unsplash API Key 保存到环境变量"**
-
-### 🔧 遇到问题？
-
-对 Claude 说：**"检查一下 media-downloader 的状态"**
-
-Claude 会告诉你哪些工具已安装、哪些 API Key 已配置。缺什么就补什么！
+Claude 会引导你完成注册和配置。
 
 ---
 
