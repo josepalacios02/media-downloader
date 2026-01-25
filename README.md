@@ -27,74 +27,32 @@
 
 ---
 
-## ⚡ Installation Guide (For Claude Code Users)
+## ⚡ One-Line Install
 
-> 🎯 **Super Easy**: Just tell Claude what you need, and Claude will handle most of the work for you!
+In Claude Code, just say:
 
-### 🤖 Let Claude Help You Install
+> **"Help me install https://github.com/yizhiyanhua-ai/media-downloader.git and all its dependencies"**
 
-If you're using Claude Code, simply say:
+Claude will automatically:
+- Download the skill to the correct location
+- Install yt-dlp, ffmpeg and other dependencies
+- Check installation status
 
-> "Help me install the dependencies for media-downloader"
-
-Claude will automatically check and install the required tools. Just click "Allow" when Claude asks for permission.
+Just click "Allow" when Claude asks for permission!
 
 ---
 
-### 📝 Manual Installation (If You Prefer)
+## 🔑 Configure API Key (Required for Image Downloads)
 
-#### Step 1: Download the Skill
+> 💡 **Note**: If you only need to download YouTube videos, you can skip this step!
 
-Tell Claude: **"Help me download media-downloader to the skills folder"**
+Image downloads require a free API Key (like a "membership card" for stock photo sites):
 
-Or run this yourself in Terminal:
-```bash
-mkdir -p ~/.claude/skills && cd ~/.claude/skills && git clone https://github.com/yizhiyanhua-ai/media-downloader.git
-```
+1. Go to **https://www.pexels.com**, click **Join** to register (Google/Apple quick signup supported)
+2. After signup, visit **https://www.pexels.com/api/**, click **Your API Key**
+3. Copy the key, then tell Claude: **"Help me save my Pexels API Key to environment variables"**
 
-#### Step 2: Install Required Tools
-
-Tell Claude: **"Help me install yt-dlp and ffmpeg"**
-
-Claude will run the installation commands for you. If you prefer to do it yourself:
-```bash
-pip install requests yt-dlp && brew install ffmpeg
-```
-
-> 💡 **What is brew?** It's a package manager for Mac. If you see "brew not found", tell Claude **"Help me install Homebrew"**, or visit https://brew.sh and follow the instructions.
-
-#### Step 3: Get Your Free API Key
-
-This step requires you to register an account yourself:
-
-1. Open your browser and go to **https://www.pexels.com**
-2. Click **Join** in the top right corner
-   - You can use Google or Apple account for quick signup!
-3. After signing up, visit **https://www.pexels.com/api/**
-4. Click **Your API Key** button
-5. You'll see a string of letters and numbers - that's your API Key. **Copy it**
-
-#### Step 4: Save Your API Key
-
-Tell Claude: **"Help me save my Pexels API Key to environment variables"**
-
-Then paste your API Key when Claude asks.
-
-Or run this yourself (replace `your_key` with your actual key):
-```bash
-echo 'export PEXELS_API_KEY="your_key"' >> ~/.zshrc && source ~/.zshrc
-```
-
-#### Step 5: Verify Installation
-
-Tell Claude: **"Check if media-downloader is installed correctly"**
-
-Or run:
-```bash
-python ~/.claude/skills/media-downloader/media_cli.py status
-```
-
-If you see green ✅ marks, you're all set! 🎉
+When done, tell Claude **"Check the status of media-downloader"** to confirm everything is working.
 
 ---
 
