@@ -156,6 +156,27 @@ Or simply tell me where you want the files:
 
 ## ❓ FAQ
 
+### Q: YouTube says "Sign in to confirm you're not a bot"?
+
+This is YouTube's anti-bot mechanism. The solution is to let yt-dlp use your browser's login session:
+
+**Method 1: Tell Claude (Recommended)**
+
+> **"Help me configure yt-dlp to use browser cookies"**
+
+Claude will set it up for you.
+
+**Method 2: Manual Configuration**
+
+1. Make sure you're logged into YouTube in your browser (Chrome/Firefox/Edge)
+2. Add `--cookies-from-browser chrome` when downloading:
+
+```bash
+yt-dlp --cookies-from-browser chrome "YouTube_URL"
+```
+
+> 💡 **Tip**: Replace `chrome` with your browser: `firefox`, `edge`, `safari`, `brave`, etc.
+
 ### Q: Why are there no image search results?
 A: Please confirm API Key is configured. Run `status` command to check configuration status.
 

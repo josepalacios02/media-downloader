@@ -156,6 +156,27 @@ media_cli.py youtube "URL" -o .
 
 ## ❓ 常见问题
 
+### Q: YouTube 提示「需要登录验证」或「确认你不是机器人」？
+
+这是 YouTube 的反爬虫机制。解决方法是让 yt-dlp 使用你浏览器的登录状态：
+
+**方法一：对 Claude 说（推荐）**
+
+> **"帮我配置 yt-dlp 使用浏览器 cookies"**
+
+Claude 会帮你设置好。
+
+**方法二：手动配置**
+
+1. 确保你已经在浏览器（Chrome/Firefox/Edge）中登录了 YouTube
+2. 下载视频时添加 `--cookies-from-browser chrome` 参数：
+
+```bash
+yt-dlp --cookies-from-browser chrome "YouTube视频链接"
+```
+
+> 💡 **提示**：把 `chrome` 换成你使用的浏览器：`firefox`、`edge`、`safari`、`brave` 等
+
 ### Q: 为什么搜索图片没有结果？
 A: 请确认已配置 API Key。运行 `status` 命令检查配置状态。
 
