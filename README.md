@@ -27,42 +27,69 @@
 
 ---
 
-## ⚡ Quick Install (1 Minute)
+## ⚡ Installation Guide (For Claude Code Users)
 
-> 🎯 **For beginners**: Just copy and paste the commands below into your Terminal!
+> 🎯 **Super Easy**: Just tell Claude what you need, and Claude will handle most of the work for you!
 
-### Step 1: Download the Skill
+### 🤖 Let Claude Help You Install
 
-Open Terminal (press `Cmd + Space`, type "Terminal", press Enter), then paste:
+If you're using Claude Code, simply say:
 
+> "Help me install the dependencies for media-downloader"
+
+Claude will automatically check and install the required tools. Just click "Allow" when Claude asks for permission.
+
+---
+
+### 📝 Manual Installation (If You Prefer)
+
+#### Step 1: Download the Skill
+
+Tell Claude: **"Help me download media-downloader to the skills folder"**
+
+Or run this yourself in Terminal:
 ```bash
 mkdir -p ~/.claude/skills && cd ~/.claude/skills && git clone https://github.com/yizhiyanhua-ai/media-downloader.git
 ```
 
-### Step 2: Install Required Tools
+#### Step 2: Install Required Tools
 
+Tell Claude: **"Help me install yt-dlp and ffmpeg"**
+
+Claude will run the installation commands for you. If you prefer to do it yourself:
 ```bash
 pip install requests yt-dlp && brew install ffmpeg
 ```
 
-> 💡 Don't have `brew`? Install it first: https://brew.sh (just copy the command from their homepage)
+> 💡 **What is brew?** It's a package manager for Mac. If you see "brew not found", tell Claude **"Help me install Homebrew"**, or visit https://brew.sh and follow the instructions.
 
-### Step 3: Get Your Free API Key (30 seconds)
+#### Step 3: Get Your Free API Key
 
-1. Open https://www.pexels.com and click **Join** (top right)
-2. After signup, go to https://www.pexels.com/api/
-3. Click **Your API Key** and copy it
+This step requires you to register an account yourself:
 
-### Step 4: Save Your API Key
+1. Open your browser and go to **https://www.pexels.com**
+2. Click **Join** in the top right corner
+   - You can use Google or Apple account for quick signup!
+3. After signing up, visit **https://www.pexels.com/api/**
+4. Click **Your API Key** button
+5. You'll see a string of letters and numbers - that's your API Key. **Copy it**
 
+#### Step 4: Save Your API Key
+
+Tell Claude: **"Help me save my Pexels API Key to environment variables"**
+
+Then paste your API Key when Claude asks.
+
+Or run this yourself (replace `your_key` with your actual key):
 ```bash
-echo 'export PEXELS_API_KEY="paste_your_key_here"' >> ~/.zshrc && source ~/.zshrc
+echo 'export PEXELS_API_KEY="your_key"' >> ~/.zshrc && source ~/.zshrc
 ```
 
-> ⚠️ Replace `paste_your_key_here` with your actual API key!
+#### Step 5: Verify Installation
 
-### Step 5: Verify Installation
+Tell Claude: **"Check if media-downloader is installed correctly"**
 
+Or run:
 ```bash
 python ~/.claude/skills/media-downloader/media_cli.py status
 ```
@@ -71,87 +98,43 @@ If you see green ✅ marks, you're all set! 🎉
 
 ---
 
-## 📋 Detailed Setup Guide
-
-> Already completed Quick Install? Skip to [Usage Examples](#-usage-examples)!
-
-### Check Basic Tools
-
-Run this command to check status:
-
-```bash
-python ~/.claude/skills/media-downloader/media_cli.py status
-```
-
-If yt-dlp or ffmpeg are not installed, run:
-
-```bash
-# Install Python dependencies
-pip install requests yt-dlp
-
-# Install video processing tool (macOS)
-brew install ffmpeg
-
-# Linux
-apt install ffmpeg
-```
-
-### Step 2: Get Free API Keys
+## 📋 More API Keys (Optional)
 
 > 💡 **Why do I need API Keys?**
 >
-> Images and videos come from professional stock sites like Pexels and Pixabay. These sites provide free high-quality assets, but require a registered account to get an API Key (like a "pass") to use their search service.
+> Think of an API Key as a "membership card" for stock photo websites. With it, you can search and download HD images and videos.
 >
 > **Good news**: Registration is completely free, and all assets are free for commercial use!
 
-#### 🟠 Get Pexels API Key (Recommended - Easiest)
+The quick install above only configured Pexels. If you want more image sources, you can register for these:
 
-1. Go to https://www.pexels.com
-2. Click **Join** in the top right corner (can use Google/Apple for quick signup)
-3. After registration, visit https://www.pexels.com/api/
-4. Click **Your API Key** button
-5. Fill in simple info, then copy the displayed API Key
+### 🟢 Pixabay (More Assets)
 
-#### 🟢 Get Pixabay API Key
-
-1. Go to https://pixabay.com
+1. Go to **https://pixabay.com**
 2. Click **Join** in the top right corner
-3. After registration, visit https://pixabay.com/api/docs/
-4. Your API Key will be displayed on the page (in the green box)
+3. After signup, visit **https://pixabay.com/api/docs/**
+4. Your API Key will be displayed right on the page (in the green box)
+5. Tell Claude: **"Help me save my Pixabay API Key to environment variables"**, then paste your key
 
-#### 🔵 Get Unsplash API Key (Optional)
+### 🔵 Unsplash (More Artistic Images)
 
-1. Go to https://unsplash.com/developers
+1. Go to **https://unsplash.com/developers**
 2. Click **Register as a developer**
-3. Create an Application
-4. Find **Access Key** in the application details page
+3. Create an Application (just give it any name)
+4. Find and copy the **Access Key**
+5. Tell Claude: **"Help me save my Unsplash API Key to environment variables"**
 
-### Step 3: Save Your API Keys
+### 🔧 Having Issues?
 
-Add the obtained keys to your terminal config file.
+Tell Claude: **"Check the status of media-downloader"**
 
-**macOS / Linux users**, edit `~/.zshrc` or `~/.bashrc`:
-
-```bash
-# Media Downloader API Keys
-export PEXELS_API_KEY="your_pexels_key"
-export PIXABAY_API_KEY="your_pixabay_key"
-export UNSPLASH_ACCESS_KEY="your_unsplash_key"  # Optional
-```
-
-After saving, run `source ~/.zshrc` to apply the configuration.
-
-### Step 4: Verify Setup
-
-```bash
-python ~/.claude/skills/media-downloader/media_cli.py status
-```
-
-If you see green ✅ marks, configuration is successful!
+Claude will tell you which tools are installed and which API Keys are configured. Just fix what's missing!
 
 ---
 
 ## 💬 Usage Examples
+
+> ⚠️ **Important**: Before using, tell Claude **"Check the status of media-downloader"** to make sure all dependencies are installed!
 
 ### Download Images
 
@@ -161,20 +144,22 @@ If you see green ✅ marks, configuration is successful!
 "Find some landscape images suitable for wallpapers"
 ```
 
-### Download Video Clips
+### Download Videos
 
-```
-"Download a city night video, under 30 seconds"
-"Find me a 15-second ocean wave video"
-"Find some natural scenery videos suitable for backgrounds"
-```
-
-### YouTube Download & Trim
+> 💡 **Recommended**: If you need to download videos, **use YouTube first**! YouTube has rich content, high quality, and doesn't require an extra API Key.
 
 ```
 "Download this video: https://youtube.com/watch?v=xxx"
 "Download minute 2 to minute 3 of this YouTube video"
 "Only download the audio from this video"
+```
+
+If you need short video clips from stock libraries:
+
+```
+"Download a city night video, under 30 seconds"
+"Find me a 15-second ocean wave video"
+"Find some natural scenery videos suitable for backgrounds"
 ```
 
 ---

@@ -27,42 +27,69 @@
 
 ---
 
-## ⚡ 一分钟快速安装
+## ⚡ 安装指南（Claude Code 用户专属）
 
-> 🎯 **小白专用**：只需要复制粘贴下面的命令到终端就行！
+> 🎯 **超级简单**：你只需要告诉 Claude 你想做什么，Claude 会帮你完成大部分工作！
 
-### 第一步：下载这个 Skill
+### 🤖 让 Claude 帮你安装
 
-打开终端（按 `Cmd + 空格`，输入「终端」或「Terminal」，回车），然后粘贴：
+如果你正在使用 Claude Code，直接对 Claude 说：
 
+> "帮我安装 media-downloader 的依赖"
+
+Claude 会自动帮你检查并安装所需的工具。你只需要在 Claude 询问时点击「允许」就行了。
+
+---
+
+### 📝 手动安装步骤（如果你想自己来）
+
+#### 第一步：下载这个 Skill
+
+对 Claude 说：**"帮我把 media-downloader 下载到 skills 文件夹"**
+
+或者自己在终端运行：
 ```bash
 mkdir -p ~/.claude/skills && cd ~/.claude/skills && git clone https://github.com/yizhiyanhua-ai/media-downloader.git
 ```
 
-### 第二步：安装必要工具
+#### 第二步：安装必要工具
 
+对 Claude 说：**"帮我安装 yt-dlp 和 ffmpeg"**
+
+Claude 会帮你运行安装命令。如果你想自己来：
 ```bash
 pip install requests yt-dlp && brew install ffmpeg
 ```
 
-> 💡 没有 `brew`？先安装它：打开 https://brew.sh，复制首页那行命令运行即可
+> 💡 **什么是 brew？** 它是 Mac 上的软件安装助手。如果提示找不到 brew，对 Claude 说 **"帮我安装 Homebrew"**，或者访问 https://brew.sh 按照首页说明安装。
 
-### 第三步：获取免费 API Key（30 秒）
+#### 第三步：获取免费 API Key
 
-1. 打开 https://www.pexels.com，点击右上角 **Join** 注册
-2. 注册后访问 https://www.pexels.com/api/
-3. 点击 **Your API Key**，复制显示的密钥
+这一步需要你自己完成（因为需要注册账号）：
 
-### 第四步：保存你的 API Key
+1. 打开浏览器，访问 **https://www.pexels.com**
+2. 点击右上角的 **Join**（加入）按钮注册账号
+   - 可以用 Google 或 Apple 账号一键注册，超快！
+3. 注册成功后，访问 **https://www.pexels.com/api/**
+4. 点击 **Your API Key** 按钮
+5. 你会看到一串字母和数字，这就是你的 API Key，**复制它**
 
+#### 第四步：保存你的 API Key
+
+对 Claude 说：**"帮我把 Pexels API Key 保存到环境变量"**
+
+然后把你复制的 API Key 粘贴给 Claude。
+
+或者自己在终端运行（记得把 `你的密钥` 换成真实的 Key）：
 ```bash
-echo 'export PEXELS_API_KEY="在这里粘贴你的密钥"' >> ~/.zshrc && source ~/.zshrc
+echo 'export PEXELS_API_KEY="你的密钥"' >> ~/.zshrc && source ~/.zshrc
 ```
 
-> ⚠️ 记得把「在这里粘贴你的密钥」替换成你刚才复制的真实密钥！
+#### 第五步：验证安装
 
-### 第五步：验证安装
+对 Claude 说：**"检查一下 media-downloader 是否安装成功"**
 
+或者自己运行：
 ```bash
 python ~/.claude/skills/media-downloader/media_cli.py status
 ```
@@ -71,87 +98,43 @@ python ~/.claude/skills/media-downloader/media_cli.py status
 
 ---
 
-## 📋 详细设置指南
+## 📋 更多图库 API Key（可选）
 
-> 已经完成快速安装？直接跳到 [使用示例](#-使用示例)！
-
-### 检查基础工具
-
-在终端运行以下命令检查状态：
-
-```bash
-python ~/.claude/skills/media-downloader/media_cli.py status
-```
-
-如果显示 yt-dlp 或 ffmpeg 未安装，请运行：
-
-```bash
-# 安装 Python 依赖
-pip install requests yt-dlp
-
-# 安装视频处理工具 (macOS)
-brew install ffmpeg
-
-# Linux
-apt install ffmpeg
-```
-
-### 第二步：获取免费 API 密钥
-
-> 💡 **为什么需要 API 密钥？**
+> 💡 **为什么需要 API Key？**
 >
-> 图片和视频素材来自 Pexels、Pixabay 等专业图库网站。这些网站提供免费的高质量素材，但需要注册账号获取一个"通行证"（API Key）才能使用他们的搜索服务。
+> 简单来说，API Key 就像是图库网站给你的「会员卡」。有了它，你就能搜索和下载高清图片和视频。
 >
-> **好消息是**：注册完全免费，而且这些素材可以免费商用！
+> **好消息**：注册完全免费，下载的素材也可以免费商用！
 
-#### 🟠 获取 Pexels API Key（推荐，最简单）
+上面的快速安装只配置了 Pexels。如果你想要更多图片来源，可以再注册这些：
 
-1. 打开 https://www.pexels.com
-2. 点击右上角 **Join** 注册账号（可用 Google/Apple 账号快速注册）
-3. 注册后，访问 https://www.pexels.com/api/
-4. 点击 **Your API Key** 按钮
-5. 填写简单信息后，复制显示的 API Key
+### 🟢 Pixabay（更多素材选择）
 
-#### 🟢 获取 Pixabay API Key
+1. 打开 **https://pixabay.com**
+2. 点击右上角 **Join** 注册
+3. 注册后访问 **https://pixabay.com/api/docs/**
+4. 页面上会直接显示你的 API Key（绿色框里）
+5. 对 Claude 说：**"帮我把 Pixabay API Key 保存到环境变量"**，然后粘贴你的 Key
 
-1. 打开 https://pixabay.com
-2. 点击右上角 **Join** 注册账号
-3. 注册后，访问 https://pixabay.com/api/docs/
-4. 页面中会显示你的 API Key（绿色框内）
+### 🔵 Unsplash（艺术感更强的图片）
 
-#### 🔵 获取 Unsplash API Key（可选）
-
-1. 打开 https://unsplash.com/developers
+1. 打开 **https://unsplash.com/developers**
 2. 点击 **Register as a developer**
-3. 创建一个 Application
-4. 在应用详情页找到 **Access Key**
+3. 创建一个 Application（随便填个名字就行）
+4. 找到 **Access Key** 并复制
+5. 对 Claude 说：**"帮我把 Unsplash API Key 保存到环境变量"**
 
-### 第三步：保存 API 密钥
+### 🔧 遇到问题？
 
-将获取到的密钥添加到你的终端配置文件中。
+对 Claude 说：**"检查一下 media-downloader 的状态"**
 
-**macOS / Linux 用户**，编辑 `~/.zshrc` 或 `~/.bashrc`：
-
-```bash
-# Media Downloader API Keys
-export PEXELS_API_KEY="你的Pexels密钥"
-export PIXABAY_API_KEY="你的Pixabay密钥"
-export UNSPLASH_ACCESS_KEY="你的Unsplash密钥"  # 可选
-```
-
-保存后运行 `source ~/.zshrc` 使配置生效。
-
-### 第四步：验证设置
-
-```bash
-python ~/.claude/skills/media-downloader/media_cli.py status
-```
-
-看到绿色 ✅ 就说明配置成功了！
+Claude 会告诉你哪些工具已安装、哪些 API Key 已配置。缺什么就补什么！
 
 ---
 
 ## 💬 使用示例
+
+> ⚠️ **重要提示**：使用前请先对 Claude 说 **"检查一下 media-downloader 的状态"**，确保所有依赖工具已安装完成！
 
 ### 下载图片
 
@@ -163,18 +146,20 @@ python ~/.claude/skills/media-downloader/media_cli.py status
 
 ### 下载视频素材
 
-```
-"下载一段城市夜景的视频，30秒以内"
-"找一段 15 秒的海浪视频"
-"找一些适合做背景的自然风光视频"
-```
-
-### YouTube 下载与剪辑
+> 💡 **推荐**：如果你需要下载视频，**优先使用 YouTube**！YouTube 视频内容丰富、质量高，而且不需要额外的 API Key。
 
 ```
 "下载这个视频：https://youtube.com/watch?v=xxx"
 "下载这个 YouTube 视频的第 2 分钟到第 3 分钟"
 "只下载这个视频的音频"
+```
+
+如果你需要从素材库下载短视频片段：
+
+```
+"下载一段城市夜景的视频，30秒以内"
+"找一段 15 秒的海浪视频"
+"找一些适合做背景的自然风光视频"
 ```
 
 ---
