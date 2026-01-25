@@ -31,11 +31,12 @@
 
 在 Claude Code 中对 Claude 说：
 
-> **"帮我安装 https://github.com/yizhiyanhua-ai/media-downloader.git 这个 skill 和它的所有依赖"**
+> **"帮我安装 https://github.com/yizhiyanhua-ai/media-downloader.git 这个 skill 和它的所有依赖，并配置 yt-dlp 使用浏览器 cookies"**
 
 Claude 会自动完成：
 - 下载 skill 到正确位置
 - 安装 yt-dlp、ffmpeg 等依赖工具
+- 配置浏览器 cookies（解决 YouTube「确认你不是机器人」的问题）
 - 检查安装状态
 
 你只需要在 Claude 询问时点击「允许」就行了！

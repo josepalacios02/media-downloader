@@ -31,11 +31,12 @@
 
 In Claude Code, just say:
 
-> **"Help me install https://github.com/yizhiyanhua-ai/media-downloader.git and all its dependencies"**
+> **"Help me install https://github.com/yizhiyanhua-ai/media-downloader.git and all its dependencies, and configure yt-dlp to use browser cookies"**
 
 Claude will automatically:
 - Download the skill to the correct location
 - Install yt-dlp, ffmpeg and other dependencies
+- Configure browser cookies (fixes YouTube "confirm you're not a bot" issue)
 - Check installation status
 
 Just click "Allow" when Claude asks for permission!
